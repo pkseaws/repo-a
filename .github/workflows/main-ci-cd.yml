@@ -1,0 +1,31 @@
+name: Multi-lang CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-matrix:
+    strategy:
+      matrix:
+        language: [java, python]
+        env: [dev, stage]
+    if: github.event_name == 'pull_request'
+    uses: enterprise-org/enterprise-cicd-pipeline/.github/workflows/unified-build-deployment.yaml@main
+    with:
+      language: ${{ matrix.language }}
+      env: ${{ matrix.env }}
+      upload_artifact: true
+
+  build-prod:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    strategy:
+      matrix:
+        language: [java, python]
+    uses: enterprise-org/enterprise-cicd-pipeline/.github/workflows/unified-build-deployment.yaml@main
+    with:
+      language: ${{ matrix.language }}
+      env: prod
+      upload_artifact: true
