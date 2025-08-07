@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build-matrix:
+  build-dev-stage:
     strategy:
       matrix:
         language: [java, python]
