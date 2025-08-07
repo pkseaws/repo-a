@@ -1,8 +1,8 @@
 name: Multi-lang CI/CD
 
 on:
-  #push:
-   # branches: [main]
+  push:
+   branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -13,7 +13,7 @@ jobs:
         language: [java, python]
         env: [dev, stage]
     if: github.event_name == 'pull_request'
-    uses: enterprise-org/enterprise-cicd-pipeline/.github/workflows/unified-build-deployment.yaml@main
+    uses: pkseaws/repob/.github/workflows/reusable-workflow.yml@main
     with:
       language: ${{ matrix.language }}
       env: ${{ matrix.env }}
@@ -24,7 +24,7 @@ jobs:
     strategy:
       matrix:
         language: [java, python]
-    uses: enterprise-org/enterprise-cicd-pipeline/.github/workflows/unified-build-deployment.yaml@main
+    uses: pkseaws/repob/.github/workflows/reusable-workflow.yml@main
     with:
       language: ${{ matrix.language }}
       env: prod
