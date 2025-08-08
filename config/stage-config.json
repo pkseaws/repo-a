@@ -1,2 +1,2 @@
-{ "env": "stage", "db": "postgres" }
+{ "env": "Staging", "db": "STAGE-DB" }
 
