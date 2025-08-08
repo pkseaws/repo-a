@@ -7,8 +7,10 @@ fi
 if [ $1 = "prod" ]; then
     ENVN=$(awk '{ gsub(/[{},"]/,""); print $2 }' config/prod-config.json)
     DB=$(awk '{ gsub(/[{},"]/,""); print $NF }' config/prod-config.json)
+    mailid=$(awk 'print $1')
     echo
-    echo "Deploying on $ENVN environment using Database $DB"
+    echo "Deploying on $ENVN environment using Database $DB" > log.txt
+    mail -s "Log File" -A message.txt $mailid
 elif [ $1 = "dev" ]; then
     ENVN=$(awk '{ gsub(/[{},"]/,""); print $2 }' config/dev-config.json)
     DB=$(awk '{ gsub(/[{},"]/,""); print $NF }' config/dev-config.json)
