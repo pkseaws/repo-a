@@ -1,3 +1,4 @@
+#!/bin/bash
 if [[ -z $0 ]]; then
 echo "Argument is missing with $0"
 exit 1
