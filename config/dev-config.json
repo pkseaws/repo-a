@@ -1,1 +1,1 @@
-{ "env": "dev", "db": "sqlite" }
+{ "env": "Devlopment", "db": "DEV-DB" }
