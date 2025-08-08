@@ -1,1 +1,1 @@
-{ "env": "prod", "db": "prod-db" }
+{ "env": "Production", "db": "PROD-DB" }
