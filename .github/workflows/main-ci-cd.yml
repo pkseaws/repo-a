@@ -39,14 +39,14 @@ jobs:
 
   terraform-workflow:
       #if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      strategy:
-        matrix:
-          language: [java, python]
-          env: [dev, stage]
+      #strategy:
+       # matrix:
+        #  language: [java, python]
+         # env: [dev, stage]
       uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
       with:
-        language: ${{ matrix.language }}
-        env: ${{ matrix.env }}
+        #language: ${{ matrix.language }}
+        #env: ${{ matrix.env }}
         terraform_dir: terraform
         upload_artifact: false
       secrets: inherit
