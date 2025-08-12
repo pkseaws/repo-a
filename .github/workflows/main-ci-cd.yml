@@ -41,17 +41,9 @@ jobs:
 
   terraform-workflow:
       if: github.event_name == 'workflow_dispatch'
-      #strategy:
-       # matrix:
-        #  language: [java, python]
-         # env: [dev, stage]
       uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
       with:
-        #language: ${{ matrix.language }}
-        #env: ${{ matrix.env }}
         terraform_dir: terraform
         upload_artifact: false
       secrets: inherit
-      #secrets:
-       # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        #AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+     
