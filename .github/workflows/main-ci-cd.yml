@@ -44,7 +44,7 @@ jobs:
           env: [dev, stage]
       uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
       with:
-        environment: ${{ matrix.env }}
+        env: ${{ matrix.env }}
         terraform_dir: terraform
       secrets: inherit
       #secrets:
