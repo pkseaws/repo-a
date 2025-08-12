@@ -48,6 +48,7 @@ jobs:
         language: ${{ matrix.language }}
         env: ${{ matrix.env }}
         terraform_dir: terraform
+        upload_artifact: false
       secrets: inherit
       #secrets:
        # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
