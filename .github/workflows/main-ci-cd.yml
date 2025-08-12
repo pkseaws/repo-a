@@ -1,10 +1,10 @@
 name: Multi-lang CI/CD
 
-on:
-  push:
-   branches: [main]
-  pull_request:
-    types: [opened, synchronize, reopened]
+on: workflow_dispatch
+  #push: 
+   #branches: [main]
+  #pull_request:
+   # types: [opened, synchronize, reopened]
 
 jobs:
   Dev-Stage:
@@ -29,3 +29,12 @@ jobs:
       language: ${{ matrix.language }}
       env: prod
       upload_artifact: true
+
+  terraform-workflow:
+      uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
+      with:
+        environment: dev
+        terraform_dir: infra/dev
+      secrets:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
