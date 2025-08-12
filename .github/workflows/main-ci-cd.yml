@@ -22,6 +22,7 @@ jobs:
       language: ${{ matrix.language }}
       env: ${{ matrix.env }}
       upload_artifact: true
+      secrets: inherit
 
   build-prod:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -33,6 +34,7 @@ jobs:
       language: ${{ matrix.language }}
       env: prod
       upload_artifact: true
+      secrets: inherit
 
   terraform-workflow:
       uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
