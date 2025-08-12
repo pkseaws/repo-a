@@ -42,9 +42,11 @@ jobs:
       strategy:
         matrix:
           env: [dev, stage]
+          language: [java, python]
       uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
       with:
         env: ${{ matrix.env }}
+        language: [java, python]
         terraform_dir: terraform
       secrets: inherit
       #secrets:
