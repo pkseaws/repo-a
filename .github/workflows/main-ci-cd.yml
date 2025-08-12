@@ -37,9 +37,13 @@ jobs:
       #secrets: inherit
 
   terraform-workflow:
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      strategy:
+        matrix:
+          env: [dev, stage]
       uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
       with:
-        environment: dev
+        environment: ${{ matrix.env }}
         terraform_dir: terraform
         secrets: inherit
       #secrets:
