@@ -6,10 +6,10 @@ on:
    #branches: [main]
   #pull_request:
    # types: [opened, synchronize, reopened]
-     inputs:
-       terraform_dir:
-         required: false
-         type: string
+    # inputs:
+     #  terraform_dir:
+      #   required: false
+       #  type: string
      
 jobs:
   Dev-Stage:
