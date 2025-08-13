@@ -1,4 +1,4 @@
- data "aws_availability_zones" "available" {
+/* data "aws_availability_zones" "available" {
       state = "available"
     }
 
@@ -14,3 +14,4 @@ resource "aws_subnet" "public" {
       cidr_block        = cidrsubnet(aws_vpc.vpc-new.cidr_block, 8, index(data.aws_availability_zones.available.names, each.value))
       
     }
+*/
