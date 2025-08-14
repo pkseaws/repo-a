@@ -15,3 +15,11 @@ resource "aws_subnet" "cicd_sub" {
     Name = "cicd_sub1"
   }
 }
+
+    resource "aws_instance" "my_ec2_instance" {
+      ami           = data.aws_ami.amazon_ami.id
+      instance_type = "t2.micro"
+      tags = {
+        Name = "MyTerraformEC2"
+      }
+    }
