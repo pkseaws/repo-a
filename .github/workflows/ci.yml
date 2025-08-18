@@ -16,7 +16,7 @@ jobs:
          env: [dev, stage]
     
     
-    #if: github.event_name == 'pull_request'
+    ##if: github.event_name == 'pull_request'
     uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
     with:
        language: ${{ matrix.language }}
