@@ -18,10 +18,10 @@ jobs:
     
     ##if: github.event_name == 'pull_request'
     uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
-    #with:
+    with:
      #  language: ${{ matrix.language }}
       # env: ${{ matrix.env }}
-       #upload_artifact: true
+       upload_artifact: true
        #terraform_dir: terraform
     secrets: inherit
   
