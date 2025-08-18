@@ -10,19 +10,19 @@ on:
      
 jobs:
   Dev-Stage:
-    strategy:
-       matrix:
-         language: [java, python]
-         env: [dev, stage]
+  #  strategy:
+   #    matrix:
+    #     language: [java, python]
+     #    env: [dev, stage]
     
     
     ##if: github.event_name == 'pull_request'
     uses: pkseaws/repo-b/.github/workflows/reusable-workflow.yml@main
-    with:
-       language: ${{ matrix.language }}
-       env: ${{ matrix.env }}
-       upload_artifact: true
-       terraform_dir: terraform
+    #with:
+     #  language: ${{ matrix.language }}
+      # env: ${{ matrix.env }}
+       #upload_artifact: true
+       #terraform_dir: terraform
     secrets: inherit
   
   # Dev-Stage:
