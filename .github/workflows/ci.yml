@@ -22,7 +22,7 @@ jobs:
      #  language: ${{ matrix.language }}
       # env: ${{ matrix.env }}
        upload_artifact: true
-       #terraform_dir: terraform
+       terraform_dir: terraform
     secrets: inherit
   
   # Dev-Stage:
