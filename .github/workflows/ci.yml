@@ -1,5 +1,5 @@
 name: Multi-lang CI/CD
-run-name: Event | ${{ github.event }}
+run-name: Event | ${{ github.event_name }}
 permissions:
   contents: write
   pull-requests: write
